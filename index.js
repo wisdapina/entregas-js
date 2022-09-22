@@ -81,41 +81,30 @@ let totalCompra = 0
  totalCompra+=compra
  
  document.getElementById('carrito').innerHTML += `
- 
 
-
-
-  <table class="table table-secondary border">
+ <table class="table table-secondary border">
+  <tbody class"text-center">
   
-  <tbody>
-    
-      <tr class="container-fluid">
-        <td>Producto</td>
-        <td>${producto.nombre}</td>
-        <td>Precio</td>
-        <td>$${producto.precio}</td>
-        <td>Cantidad</td>
-        <td>${producto.cantidad}</td>
-        <td>cantidades totales</td>
-        <td>$${compra}</td>
-    </tr>
-      
-    
-
-  
-  
-  
-  
+      <tr class="text-center">
+        <td >Producto</td>
+        <td >${producto.nombre}</td>
+        <td >Precio</td>
+        <td >$${producto.precio}</td>
+        <td >Cantidad</td>
+        <td >${producto.cantidad}</td>
+        <td >Sub-Totales</td>
+        <td >$${compra}</td>
+       </tr>
   </tbody>
 </table>
   
   `
-
 }
-
 document.getElementById('carrito').innerHTML+= `
 <h4 class="text-center">Compra Total: $ ${totalCompra}</h4>
 `
-
-
 }
+
+localStorage.setItem('datos',JSON.stringify(productos))
+
+
