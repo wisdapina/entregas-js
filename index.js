@@ -78,20 +78,44 @@ function mostrarCarrito (){
 let totalCompra = 0
  for (const producto of carrito) {
  compra= producto.precio* producto.cantidad
- document.getElementById('carrito').innerHTML += `
-  <h2 >${producto.nombre}</h2>
+ totalCompra+=compra
  
-  <img src=${producto.img} class="imagenCard" alt="jaula">
-  <p>${producto.descr}</p>
-  <p>cantidad: ${producto.cantidad}</p>
-  <p>$${compra} </p>
+ document.getElementById('carrito').innerHTML += `
+ 
+
+
+
+  <table class="table table-secondary border">
+  
+  <tbody>
+    
+      <tr class="container-fluid">
+        <td>Producto</td>
+        <td>${producto.nombre}</td>
+        <td>Precio</td>
+        <td>$${producto.precio}</td>
+        <td>Cantidad</td>
+        <td>${producto.cantidad}</td>
+        <td>cantidades totales</td>
+        <td>$${compra}</td>
+    </tr>
+      
+    
+
+  
+  
+  
+  
+  </tbody>
+</table>
+  
   `
+
 }
 
-
-
-
-
+document.getElementById('carrito').innerHTML+= `
+<h4 class="text-center">Compra Total: $ ${totalCompra}</h4>
+`
 
 
 }
