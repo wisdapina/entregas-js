@@ -9,27 +9,34 @@ this.nombre=nombre
 this.precio=precio
 this.img=img
 this.descr=descr
+
+
+
+
+
+
+
 }desplegarDiv() 
 {
-    const card = `
-        <div class=" col-6 just "> 
-            <div class="producto text-center" >
-             <h2 >${this.nombre}</h2>
-          
-             <img src=${this.img} class="imagen " alt="jaula">
-             <p>${this.descr}</p>
-              
-             <p>$${this.precio}</p>
-             <button id=${this.id}>COMPRAR</button>
-           
-             </div>
-         </div>
+
+  const card =  `
+  <div class=" col-6 just "> 
+      <div class="producto text-center" >
+       <h2 >${this.nombre}</h2>
     
-    `
+       <img src=${this.img} class="imagen " alt="jaula">
+       <p>${this.descr}</p>
+        
+       <p>$${this.precio}</p>
+       <button id=${this.id}>COMPRAR</button>
+     
+       </div>
+   </div>
+
+`
+     
     const contenedor = document.getElementById('contenedor')
     contenedor.innerHTML+=card
-
-
 
 }agregandoEvento (){
  const boton= document.getElementById(this.id)
@@ -58,7 +65,10 @@ productos.forEach( e=>{
 }
 )
  function agregarACarrito(producto){
-let enCarrito = carrito.find(product =>product.id==producto.id)
+
+ 
+
+  let enCarrito = carrito.find(product =>product.id==producto.id)
   if (!enCarrito) {
     carrito.push({...producto, cantidad:1})
   }else{
@@ -99,12 +109,26 @@ let totalCompra = 0
 </table>
   
   `
-}
-document.getElementById('carrito').innerHTML+= `
-<h4 class="text-center">Compra Total: $ ${totalCompra}</h4>
-`
+
+  
 }
 
-localStorage.setItem('datos',JSON.stringify(productos))
+
+function sumarEnvio () {
+ 
+  return totalCompra > 5000 
+  ?  document.getElementById('carrito').innerHTML+= `
+
+  <h4 class="text-center">Compra Total envio gratis= $${totalCompra } </h4>
+  `
+   : document.getElementById('carrito').innerHTML+= `
+   <h4 class="text-center">(Compra Total $${totalCompra } + envio $500) = $${totalCompra + 500 } </h4>
+   `
+  }
+sumarEnvio(totalCompra)
+
+}
+
+localStorage.setItem('datos',JSON.stringify(productos).value)
 
 
