@@ -44,7 +44,19 @@ this.descr=descr
  
  boton.onclick =()=>{
     agregarACarrito(productoEncontrado)
- } 
+    Toastify({
+      text: `Has agregado ${this.nombre} al carrito`,
+      className: "info",
+      gravity: `top`,
+      
+      style: {
+        background: "linear-gradient(to right, black, #708090",
+      }
+    }).showToast();
+ 
+  
+ 
+  } 
 }
 
 }
@@ -119,7 +131,7 @@ function sumarEnvio () {
   return totalCompra > 5000 
   ?  document.getElementById('carrito').innerHTML+= `
 
-  <h4 class="text-center">Compra Total envio gratis= $${totalCompra } </h4>
+  <h4 class="text-center " '>Compra Total envio gratis= $${totalCompra } </h4>
   `
    : document.getElementById('carrito').innerHTML+= `
    <h4 class="text-center">(Compra Total $${totalCompra } + envio $500) = $${totalCompra + 500 } </h4>
@@ -128,6 +140,7 @@ function sumarEnvio () {
 sumarEnvio(totalCompra)
 
 }
+
 
 localStorage.setItem('datos',JSON.stringify(productos).value)
 
