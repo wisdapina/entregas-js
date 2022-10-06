@@ -144,4 +144,19 @@ sumarEnvio(totalCompra)
 
 localStorage.setItem('datos',JSON.stringify(productos).value)
 
+ const publicidad = document.getElementById('publicidad')
 
+
+ publicidad.onclick = async () => {
+  
+  const mercadolibre = await fetch(' https://api.mercadolibre.com/sites/MLA/search?category=MLA1055')
+  const infoMl = await mercadolibre.json()
+  const producto = infoMl.json.results
+
+ 
+  console.log(producto)
+
+
+
+
+ }
