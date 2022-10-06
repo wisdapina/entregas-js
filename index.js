@@ -1,5 +1,5 @@
 
-let productos=[]
+let productos= []
 let carrito=[]
 
 class Producto {
@@ -42,9 +42,9 @@ this.descr=descr
  const boton= document.getElementById(this.id)
  const productoEncontrado = productos.find(product => product.id == this.id)
  
- boton.onclick =()=>{
-    agregarACarrito(productoEncontrado)
-    Toastify({
+ boton.onclick = ()=>{
+   agregarACarrito(productoEncontrado)
+   Toastify({
       text: `Has agregado ${this.nombre} al carrito`,
       className: "info",
       gravity: `top`,
@@ -64,7 +64,7 @@ this.descr=descr
 let prod1 = new Producto ('1','Atomo',1500,'./images/atomo.jpg','Colgante Atomo Deco Vintage 1 Luz E27 Apto Led')
 let prod2 = new Producto ('2','Diamante',1000,'./images/diamante.jpg','Colgante Jaula Diamante Deco Vintage 1 Luz E27 Apto Led')
 let prod3 = new Producto ('3','Estrella',1200,'./images/estrella.jpg','Colgante Estrella Deco Vintage 1 Luz E27 Apto Led')
-let prod4 = new Producto ('4','Jaula',900,'./images/jaula.jpg','Colgante Jaula Deco Vintage 1 Luz E27 Apto Led')
+let prod4 = new Producto ('4','Jaula',900,'./images/jaula.jpg','Colgante Jaula Deco Vintage 1 Luz E27 Apto Led') 
 
 productos.push(prod1,prod2,prod3,prod4)
 
@@ -89,7 +89,7 @@ productos.forEach( e=>{
 
   }
   
-console.log(carrito)
+
 mostrarCarrito()
 }
 
@@ -98,7 +98,10 @@ function mostrarCarrito (){
   document.getElementById('carrito').innerHTML= '';
   let compra= 0
 let totalCompra = 0
- for (const producto of carrito) {
+
+
+
+for (const producto of carrito) {
  compra= producto.precio* producto.cantidad
  totalCompra+=compra
  
@@ -136,27 +139,28 @@ function sumarEnvio () {
    : document.getElementById('carrito').innerHTML+= `
    <h4 class="text-center">(Compra Total $${totalCompra } + envio $500) = $${totalCompra + 500 } </h4>
    `
+  
+
+
+
+
+
   }
 sumarEnvio(totalCompra)
+
+
+
+
 
 }
 
 
 localStorage.setItem('datos',JSON.stringify(productos).value)
 
- const publicidad = document.getElementById('publicidad')
+ 
 
 
- publicidad.onclick = async () => {
-  
-  const mercadolibre = await fetch(' https://api.mercadolibre.com/sites/MLA/search?category=MLA1055')
-  const infoMl = await mercadolibre.json()
-  const producto = infoMl.json.results
+
 
  
-  console.log(producto)
-
-
-
-
- }
+ 

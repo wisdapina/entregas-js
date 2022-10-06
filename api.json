@@ -1,0 +1,29 @@
+[
+   
+   {
+    "id":"1",
+    "nombre":"trapecio",
+    "precio":"1000",
+    "img":"./images/trapecio.jpg",
+    "descr":"Colgante trapecio Deco Vintage 1 Luz E27 Apto Led"
+   },
+
+   {
+    "id":"2",
+    "nombre":"cubo",
+    "precio":"1200",
+    "img":"./images/cubo.jpg",
+    "descr":"Colgante cubo Diamante Deco Vintage 1 Luz E27 Apto Led"
+   },
+
+   {
+    "id":"3",
+    "nombre":"cilindro",
+    "precio":"800",
+    "img":"./images/cilindro.jpg",
+    "descr":"Colgante Estrella Deco Vintage 1 Luz E27 Apto Led"
+   }
+   
+
+
+]
